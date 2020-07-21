@@ -5,7 +5,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.urenapp.Controller.DepartmentRepository;
 import com.example.urenapp.Model.Department;
 
 @Service
