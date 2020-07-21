@@ -12,13 +12,13 @@ import com.example.urenapp.Model.Department;
 @Transactional
 
 public class DepartmentService {
-	
-	@Autowired 
-	DepartmentRepository dr; 
-	
+
+	@Autowired
+	DepartmentRepository dr;
+
 	public Iterable<Department> getAllDepartments() {
 		System.out.println("All departments returned");
 		return dr.findAll();
 	}
-	
+
 }
