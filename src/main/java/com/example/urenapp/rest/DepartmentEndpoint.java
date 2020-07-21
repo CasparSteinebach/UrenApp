@@ -20,7 +20,6 @@ public class DepartmentEndpoint {
 		return salaris;
 	}
 		
-	
 	@GetMapping("/all") 
 	public Iterable<Department> getDepartment() {
 		return uas.getAllDepartments();
