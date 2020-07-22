@@ -24,12 +24,6 @@ public class HRManagerServices {
 		return hrm.save(hrmanager);
 	}
 
-//	public HRManager updateHRManager2(long id, HRManager hr) {
-//		System.out.println("HRManager is ontslagen en vervangen");
-//		hr.setId(id);
-//		return hrm.save(hr);
-//	}
-
 	public HRManager addHRManager(HRManager hrmanager) {
 		System.out.println("HRManager adding executed");
 		return hrm.save(hrmanager);
@@ -43,8 +37,21 @@ public class HRManagerServices {
 	public HRManager updateHRManagerNaam(long id, HRManager hrs) {
 		System.out.println("hrmanager heeft een update gehad, please reboot");
 		HRManager hrmanager = hrm.findById(id).get();
-		hrmanager.setName(hrs.getName());
+		
+		if (hrs.getName()!=null && hrs.getName()!= "") {
+			hrmanager.setName(hrs.getName());		
+		}
+		
+		if (hrs.getSalary()!= 0.0) {
+			hrmanager.setSalary(hrs.getSalary());		
+		}
+		
 		return hrm.save(hrmanager);
-	
 	}
+
+	public void deleteHRManagerById(long id) {
+		System.out.println("HRManager is ontslagen");
+		hrm.deleteById(id);
+	}
+
 }

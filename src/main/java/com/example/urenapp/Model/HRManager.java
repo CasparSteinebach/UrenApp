@@ -1,7 +1,5 @@
 package com.example.urenapp.Model;
 
-import java.util.Optional;
-
 import javax.persistence.Entity;
 
 @Entity
