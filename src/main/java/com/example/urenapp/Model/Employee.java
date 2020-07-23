@@ -1,6 +1,4 @@
 package com.example.urenapp.Model;
-import java.util.ArrayList;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +11,7 @@ public class Employee {
 	long id; //primary key
 	String name;
 	double salary;
-	ArrayList <Messages> messages;
+//	ArrayList <Message> messages;
 	public long getId() {
 		return id;
 	}
@@ -32,12 +30,12 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	public ArrayList<Messages> getMessages() {
-		return messages;
-	}
-	public void setMessages(ArrayList<Messages> messages) {
-		this.messages = messages;
-	}
+//	public ArrayList<Message> getMessages() {
+//		return messages;
+//	}
+//	public void setMessages(ArrayList<Message> messages) {
+//		this.messages = messages;
+//	}
 	
 	
 }
