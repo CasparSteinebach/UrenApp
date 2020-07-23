@@ -35,6 +35,9 @@ public class EmployeeEndpoint {
 	DepartmentManagerService depmanagerservice;
 	@Autowired
 	ProgrammerService programmerservice;
+
+
+	
 	
 	// Lijsten maken
 	
@@ -95,6 +98,11 @@ public class EmployeeEndpoint {
 	
 	// medewerkers vinden op basis van id
 	
+	@GetMapping("employee/{id}")
+	public Employee getEmployeeById(@PathVariable(value = "id") long id) {
+		return employeeservice.getEmployeeById(id);
+	}
+	
 	@GetMapping("/hrmanager/{id}")
 	public HRManager getHRManagerById(@PathVariable(value="id") long id) {
 		return hrmservice.getHRManagerByID(id);
@@ -116,6 +124,11 @@ public class EmployeeEndpoint {
 	}
 	
 	// medewerkers updaten
+	
+	@PutMapping("/update/employee/{id}")
+	public Employee updateEmployee(@PathVariable(value="id") long id, @RequestBody Employee employee) {
+		return employeeservice.updateEmployeeName(id, employee);
+	}
 	
 	@PutMapping("/update/hrmanager/{id}")
 	public HRManager updateHRManager(@PathVariable(value="id") long id, @RequestBody HRManager hrm) {
@@ -139,6 +152,12 @@ public class EmployeeEndpoint {
 	
 	// medewerkers verwijderen
 	
+	@DeleteMapping("/delete/employee/{id}")
+	public String deleteEmployeeById(@PathVariable(value="id") long id) {
+	employeeservice.deleteEmployeeById(id);
+	return "Employee is weg!";
+	}
+			
 	@DeleteMapping("/delete/hrmanager/{id}")
 	public String deleteHRManagerById(@PathVariable(value="id") long id) {
 		hrmservice.deleteHRManagerById(id);
