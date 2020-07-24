@@ -68,6 +68,8 @@ public class EmployeeEndpoint {
 	
 	// Nieuwe medewerkers toevoegen
 	
+	
+
 	@PostMapping("/new-employee")
 	public Employee addEmployee(@RequestBody Employee employee) {
 		System.out.println("Employee added :)");
