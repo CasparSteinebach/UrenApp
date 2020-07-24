@@ -26,7 +26,7 @@ import com.example.urenapp.Model.Programmer;
 public class EmployeeEndpoint {
 
 	@Autowired 
-	EmployeeService employeeservice;
+	EmployeeService employservice;
 	@Autowired
 	HRManagerServices hrmservice;
 	@Autowired
@@ -43,7 +43,7 @@ public class EmployeeEndpoint {
 	
 	@GetMapping("/all-employees") 
 	public Iterable<Employee> getEmployee() {
-		return employeeservice.getAllEmployees();
+		return employservice.getAllEmployees();
 	}
 	
 	@GetMapping("/all-hrmanagers")
@@ -71,7 +71,7 @@ public class EmployeeEndpoint {
 	@PostMapping("/new-employee")
 	public Employee addEmployee(@RequestBody Employee employee) {
 		System.out.println("Employee added :)");
-		return employeeservice.addEmployee(employee);
+		return employservice.addEmployee(employee);
 	}
 	@PostMapping("/new-hrmanager")
 	public HRManager addHRManager(@RequestBody HRManager hrmanager) {
@@ -100,7 +100,7 @@ public class EmployeeEndpoint {
 	
 	@GetMapping("employee/{id}")
 	public Employee getEmployeeById(@PathVariable(value = "id") long id) {
-		return employeeservice.getEmployeeById(id);
+		return employservice.getEmployeeById(id);
 	}
 	
 	@GetMapping("/hrmanager/{id}")
@@ -127,7 +127,7 @@ public class EmployeeEndpoint {
 	
 	@PutMapping("/update/employee/{id}")
 	public Employee updateEmployee(@PathVariable(value="id") long id, @RequestBody Employee employee) {
-		return employeeservice.updateEmployeeName(id, employee);
+		return employservice.updateEmployeeName(id, employee);
 	}
 	
 	@PutMapping("/update/hrmanager/{id}")
@@ -154,7 +154,7 @@ public class EmployeeEndpoint {
 	
 	@DeleteMapping("/delete/employee/{id}")
 	public String deleteEmployeeById(@PathVariable(value="id") long id) {
-	employeeservice.deleteEmployeeById(id);
+	employservice.deleteEmployeeById(id);
 	return "Employee is weg!";
 	}
 			
