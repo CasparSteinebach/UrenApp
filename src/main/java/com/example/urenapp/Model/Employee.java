@@ -1,26 +1,19 @@
 package com.example.urenapp.Model;
-
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "employee")
 public class Employee {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO) // this is the auto increment
-	private long id; // primary key
-	private String name;
-	private double salary;
-	@OneToMany
-	@JoinColumn(name = "employee_id")
-	private List<Message> messages;
+	@GeneratedValue(strategy = GenerationType.AUTO) //this is the auto increment
+	long id; //primary key
+	String name;
+	double salary;
+//	ArrayList <Messages> messages;
 
 	public long getId() {
 		return id;
@@ -45,10 +38,10 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-//	public ArrayList<Message> getMessages() {
+//	public ArrayList<Messages> getMessages() {
 //		return messages;
 //	}
-//	public void setMessages(ArrayList<Message> messages) {
+//	public void setMessages(ArrayList<Messages> messages) {
 //		this.messages = messages;
 //	}
 
