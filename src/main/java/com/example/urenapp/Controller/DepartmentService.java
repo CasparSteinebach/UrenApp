@@ -20,4 +20,9 @@ public class DepartmentService {
 		return dr.findAll();
 	}
 
+	public Department addEmployee(long departmentid, long employeeid) {
+		
+		return null;
+	}
+
 }
