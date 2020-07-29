@@ -1,6 +1,10 @@
 package com.example.urenapp.Model;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
+=======
+import java.util.List;
+>>>>>>> master
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+<<<<<<< HEAD
 
 @Entity
 
@@ -19,6 +24,24 @@ public class Department {
 	int aantalMedewerkers;
 	double salaris;
 
+=======
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "department")
+public class Department {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) // this is the auto increment
+	private long id; // primary key
+	private String naam;
+	int aantalMedewerkers;
+	double salaris;
+
+	@OneToMany
+	@JoinColumn(name = "employee_id")
+	private List<Employee> employees = new ArrayList<>();
+
+>>>>>>> master
 	public long getId() {
 		return id;
 	}
@@ -51,8 +74,22 @@ public class Department {
 		return salaris;
 	}
 
+<<<<<<< HEAD
 	public void addEmployees(Employee employee) {
 		this.employees.add(employee);
+=======
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+
+	public void addEmployees(Employee newEmployee) {
+		System.out.println("employee was added to database");
+		this.employees.add(newEmployee);
+>>>>>>> master
 	}
 
 }

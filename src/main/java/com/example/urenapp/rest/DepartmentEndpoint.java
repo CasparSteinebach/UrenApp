@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.urenapp.Controller.DepartmentService;
+import com.example.urenapp.Controller.EmployeeService;
 import com.example.urenapp.Model.Department;
 import com.example.urenapp.Model.HRManager;
 
@@ -17,10 +18,17 @@ public class DepartmentEndpoint {
 
 	@Autowired
 	DepartmentService uas;
+<<<<<<< HEAD
 
 	// @Autowired
 	HRManager hrmanagerdepartment;
 
+=======
+	@Autowired
+	EmployeeService employeeservice;
+	
+	
+>>>>>>> master
 	@GetMapping("/loonsverhoging/{id}")
 	public double NieuwSalaris(double salaris) {
 		return salaris;
@@ -30,6 +38,7 @@ public class DepartmentEndpoint {
 	public Iterable<Department> getDepartment() {
 		return uas.getAllDepartments();
 	}
+<<<<<<< HEAD
 
 	@GetMapping("/startmeeting")
 	public void StartMeeting() {
@@ -44,3 +53,11 @@ public class DepartmentEndpoint {
 
 
 }
+=======
+	
+	@PutMapping("/addemployeetodepartment/{departmentid}/{employeeid}")
+	public Department addEmployeeToDepartment(@PathVariable(value = "departmentid") long departmentid,@PathVariable(value = "employeeid") long employeeid) {
+		return uas.addEmployee(departmentid, employeeid);
+	}
+}	
+>>>>>>> master
