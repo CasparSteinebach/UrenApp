@@ -22,7 +22,7 @@ public class Department {
 	double salaris;
 
 	@OneToMany
-	@JoinColumn(name = "employee_id")
+	@JoinColumn(name = "abcd_id")
 	private List<Employee> employees = new ArrayList<>();
 
 	public long getId() {

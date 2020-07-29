@@ -21,7 +21,7 @@ public class EmployeeService {
 	}
 
 	public Employee addEmployee(Employee employee) {
-		System.out.println("Add department executed");
+		System.out.println("add employee executed in service");
 		return emp.save(employee);
 	}
 
