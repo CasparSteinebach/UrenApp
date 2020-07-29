@@ -34,5 +34,3 @@ build/
 
 ##
 *.properties
-/.mvn/
-/src/
